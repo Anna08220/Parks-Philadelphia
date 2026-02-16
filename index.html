@@ -21,9 +21,9 @@
         
         // Add GeoJSON with green markers and filter - Reference: Leaflet GeoJSON (https://leafletjs.com/reference.html#geojson)
         L.geoJSON(places, {
-            // filter: function(feature) {
-            //     return feature.properties.park_name === "Frank Glavin Playground";
-            // },
+             filter: function(feature) {
+                 return feature.properties.park_name === "Frank Glavin Playground";
+             },
             pointToLayer: function(feature, latlng) {
                 return L.circleMarker(latlng, {
                     radius: 8,
