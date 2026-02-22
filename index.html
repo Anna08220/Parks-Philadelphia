@@ -31,9 +31,9 @@ Add a filter to show only 'Frank Glavin Playground' -->
         
         // Add GeoJSON with green markers and filter - Reference: Leaflet GeoJSON Section 
         L.geoJSON(places, {
-           // filter: function(feature) {
-               // return feature.properties.park_name === "Frank Glavin Playground";
-           // },
+            filter: function(feature) {
+                return feature.properties.park_name === "Frank Glavin Playground";
+            },
             // pointToLayer converts GeoJSON points to circle markers - Reference: Leaflet CircleMarker 
             pointToLayer: function(feature, latlng) {
                 return L.circleMarker(latlng, {
